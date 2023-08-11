@@ -25,7 +25,9 @@ jobs:
       - name: Download Element
         run: wget https://github.com/vector-im/element-web/releases/download/v1.11.38/element-v1.11.38.tar.gz -O webapp.tar.gz
       - name: Kaitou Element
-        run: tar -zxvf webapp.tar.gz
+        run: |
+          tar -zxvf webapp.tar.gz
+          mv element-v1.11.38 webapp
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
