@@ -28,6 +28,7 @@ jobs:
         run: |
           tar -zxvf webapp.tar.gz
           mv element-v1.11.38 webapp
+          cp webapp/config.sample.json webapp/config.json
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
